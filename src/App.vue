@@ -152,6 +152,11 @@ export default {
       this.turn = this.result[step][0] + 1;
       this.cellStates = this.result[step][1];
       this.player = step % 2 == 0 ? "X" : "O";
+      if (judgeGameEnd(this.cellStates)) {
+        this.gameEnd = true;
+      } else {
+        this.gameEnd = false;
+      }
     }
   }
 };
